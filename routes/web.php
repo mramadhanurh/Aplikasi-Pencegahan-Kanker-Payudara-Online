@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\RiwayatController;
 use App\Http\Controllers\UsiaController;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +19,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/konsultasi', function () {
+    return view('konsultasi');
 });
 
 // Route::get('/', function () {
@@ -55,4 +60,12 @@ Route::post('kategori', [KategoriController::class, 'store']);
 Route::get('edit-kategori/{id}', [KategoriController::class, 'edit']);
 Route::put('update-kategori/{id}', [KategoriController::class, 'update']);
 Route::delete('delete-kategori/{id}', [KategoriController::class, 'destroy']);
+
+// Route Pertanyaan
+Route::get('pertanyaan', [PertanyaanController::class, 'index']);
+Route::get('fetch-pertanyaan', [PertanyaanController::class, 'fetchpertanyaan']);
+Route::post('pertanyaan', [PertanyaanController::class, 'store']);
+Route::get('edit-pertanyaan/{id}', [PertanyaanController::class, 'edit']);
+Route::put('update-pertanyaan/{id}', [PertanyaanController::class, 'update']);
+Route::delete('delete-pertanyaan/{id}', [PertanyaanController::class, 'destroy']);
 

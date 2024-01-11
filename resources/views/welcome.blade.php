@@ -70,7 +70,7 @@
                                 <div class="content-wrapper">
                                     <h1 class="banner-title">Virtual healthcare <br> for you</h1>
                                     <p class="text text-white">Medimoor provides progressive, and affordable healthcare, accessible on mobile and onnline for everyone</p>
-                                    <a href = "#" class="btn btn-secondary">Consult today</a>
+                                    <a href = "/konsultasi" class="btn btn-secondary">Consult today</a>
                                 </div>
                             </div>
 
