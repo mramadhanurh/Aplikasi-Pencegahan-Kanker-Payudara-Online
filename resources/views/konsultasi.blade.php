@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Medimoor</title>
+        <title>Kepoinaja</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- font awesome -->
@@ -53,8 +53,8 @@
                         <div class="navbar-content d-flex justify-content-between align-items-center">
                             <div class = "brand-and-toggler d-flex align-items-center justify-content-between">
                                 <a href = "/" class = "navbar-brand d-flex align-items-center">
-                                    <span class="brand-shape d-inline-block text-white">M</span>
-                                    <span class="brand-text fw-7">Medimoor</span>
+                                    <!-- <span class="brand-shape d-inline-block text-white">M</span> -->
+                                    <span class="brand-text fw-7">Kepoinaja</span>
                                 </a>
                                 <button type = "button" class = "d-none navbar-show-btn">
                                     <i class = "fas fa-bars"></i>
@@ -68,10 +68,10 @@
 
                                 <ul class = "navbar-nav d-flex align-items-center">
                                     <li class = "nav-item">
-                                        <a href = "/" class = "nav-link text-white nav-active text-nowrap">Home</a>
+                                        <a href = "/" class = "nav-link text-white text-nowrap">Home</a>
                                     </li>
                                     <li class = "nav-item">
-                                        <a href = "#" class = "nav-link text-white text-nowrap">Alur Kerja</a>
+                                        <a href = "/konsultasi" class = "nav-link text-white nav-active text-nowrap">Konsultasi</a>
                                     </li>
                                     <li class = "nav-item">
                                         <a href="{{ route('login') }}" class = "nav-link text-white text-nowrap">Log In</a>
@@ -125,7 +125,7 @@
                                             </div>
                                         @endforeach
                                         </form>
-                                            
+                                            <br><br>
                                         <a   href = "#" class="btn btn-primary-outline" id="periksa-hasil">Lihat Hasil</a>
                                     </div>
                                     <div class="right d-none">
@@ -147,8 +147,31 @@
 
                         </div>
                     </div>
-                </div>
+                </div><br><br><br>
+
             </header>
+            <section class = "sc-grid sc-grid-two">
+                <div class = "container">
+                    <div class = "grid-content d-grid align-items-center">
+                        <div class = "grid-img">
+                            <img src = "assets/images/download-image.png" alt = "">
+                        </div>
+                        <div class = "grid-text">
+                            <div class = "content-wrapper text-start">
+                                <div class = "title-box">
+                                    <h3 class = "title-box-name">Download our mobile apps</h3>
+                                    <div class = "title-separator mx-auto"></div>
+                                </div>
+                                <p class = "text title-box-text">Our dedicated patient engagement app and web portal allow you to access information instantaneously (no tedeous form, long calls, or administrative hassle) and securely</p>
+                                <button type = "button" class = "btn btn-primary-outline">
+                                    Download
+                                    <img src = "assets/images/arrow-down.svg" />
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
             <!-- end of header -->
 
             <footer class = "footer">
@@ -156,12 +179,12 @@
                     <div class = "footer-content">
                         <div class = "footer-list d-grid text-white">
                             <div class = "footer-item">
-                                <a href = "#" class = "navbar-brand d-flex align-items-center">
-                                    <span class = "brand-shape d-inline-block text-white">M</span>
-                                    <span class = "brand-text fw-7">Medimoor</span>
+                                <a href = "/" class = "navbar-brand d-flex align-items-center">
+                                    <!-- <span class = "brand-shape d-inline-block text-white">M</span> -->
+                                    <span class = "brand-text fw-7">Kepoinaja</span>
                                 </a>
-                                <p class = "text-white">Medimoor provides progressive, and affordable healthcare, accessible on mobile and online for everyone</p>
-                                <p class = "text-white copyright-text">&copy; Medimoor PTY LTD 2024. All rights reserved.</p>
+                                <p class = "text-white">Kepoinaja provides progressive, and affordable healthcare, accessible on mobile and online for everyone</p>
+                                <p class = "text-white copyright-text">&copy; Kepoinaja PTY LTD 2024. All rights reserved.</p>
                             </div>
 
                             <div class = "footer-item">
@@ -222,11 +245,11 @@
                     calc+= parseInt(val['value'])
                 })
                 if(calc <=4){
-                    $('#hasil1').text('Rendah')
+                    $('#hasil1').html('<span style="color: green;">Rendah</span>')
                 }else if(calc > 4 && calc <7){
-                    $('#hasil1').text('Sedang')
+                    $('#hasil1').html('<span style="color: yellow;">Sedang</span>')
                 }else{
-                    $('#hasil1').text('Tinggi')
+                    $('#hasil1').html('<span style="color: red;">Tinggi</span>')
                 }
                 // console.log(calc)
                 calc2 = 0;
@@ -234,9 +257,9 @@
                     calc2+= parseInt(val['value'])
                 })
                 if(calc2 >0){
-                    $('#hasil2').text('Mencurigakan')
+                    $('#hasil2').html('<span style="color: red;">Mencurigakan</span>')
                 }else{
-                    $('#hasil2').text('Normal')
+                    $('#hasil2').html('<span style="color: green;">Normal</span>')
                 }
                 $('.right').removeClass('d-none')
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\PertanyaanController;
 use App\Http\Controllers\RiwayatController;
@@ -76,6 +77,16 @@ Route::group(['middleware'=>'auth'], function(){
 	// Route hasil
 	Route::get('hasil', [KonsultasiController::class, 'daftarHasil']);
 	Route::get('fetch-konsultasi', [KonsultasiController::class, 'fetchkonsultasi']);
+
+	// Route Artikel
+	Route::get('artikel', [ArtikelController::class, 'index']);
+	Route::get('add-artikel', [ArtikelController::class, 'create']);
+	Route::post('add-artikel', [ArtikelController::class, 'store']);
+	Route::get('edit-artikel/{id}', [ArtikelController::class, 'edit']);
+	Route::put('update-artikel/{id}', [ArtikelController::class, 'update']);
+	Route::get('delete-artikel/{id}', [ArtikelController::class, 'destroy']);
+
+
 });
 
 

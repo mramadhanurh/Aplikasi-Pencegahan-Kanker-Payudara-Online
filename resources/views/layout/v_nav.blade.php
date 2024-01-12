@@ -48,5 +48,13 @@
                 </p>
             </a>
         </li>
+        <li class="nav-item">
+            <a href="/artikel" class="nav-link">
+                <i class="nav-icon far fa-newspaper"></i>
+                <p>
+                    Artikel
+                </p>
+            </a>
+        </li>
     </ul>
 </nav>
