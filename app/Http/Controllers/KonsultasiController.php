@@ -52,6 +52,7 @@ class KonsultasiController extends Controller
     	$konsul = new Konsultasi;
     	$konsul->total_skor_resiko = $request->input('calc1');
     	$konsul->total_skor_analisa = $request->input('calc2');
+    	$konsul->nama = $request->input('nama');
     	$konsul->save();
 
     	return json_encode(['status' =>'sukses']);
@@ -82,6 +83,7 @@ class KonsultasiController extends Controller
         	$analisa = (int)$item->total_skor_analisa;
 
         	$temp['analisa'] = $analisa > 0? 'Mencurigakan' : 'Normal';
+        	$temp['nama'] = $item->nama;
         	$result[] = $temp;
 
         				

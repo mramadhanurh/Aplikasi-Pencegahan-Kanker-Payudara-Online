@@ -43,6 +43,31 @@
             .left{
                 border: 1px solid var(--clr-grey);
             }
+            .form-control{
+                display: block;
+                /*width: 100%;*/
+                height: calc(1.5em + 0.75rem + 2px);
+                padding: 0.375rem 0.75rem;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #495057;
+                background-color: #fff;
+                background-clip: padding-box;
+                border: 1px solid #ced4da;
+                border-radius: 0.25rem;
+                transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+                margin-left: 2rem;
+                margin-right: 1rem;
+            }
+            .form-control:focus{
+                color: #495057;
+                background-color: #fff;
+                border-color: #80bdff;
+                outline: 0;
+                box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+            }
+            .fc-red{color: red !important;}
         </style>
         
         <div class="page-wrapper">
@@ -99,6 +124,13 @@
                                 <div class="q-wrapper d-flex">
                                     <div class="left">
                                         <form id="form1">
+                                            <div class="per-item">
+                                                <div class="row fs-htm mb-10 d-flex">
+                                                    <div class="fs-htm ">Nama</div>
+                                                    <input type="text" name="nama" id="nama" class="form-control" required>
+                                                    <small class="msg d-none fc-red">*wajib diisi</small>
+                                                </div>
+                                            </div>
                                         @foreach($bkg as $p)
                                             <div class="per-item">
                                                 <div class="row fs-htm mb-10">{{ $p['pertanyaan'] }}</div>
@@ -240,12 +272,26 @@
         <script type="text/javascript">
             $(document).on('click','#periksa-hasil', function(e){
                 e.preventDefault()
+                if($('#nama').val() == ''){
+                    $('.msg').removeClass('d-none')
+                    $('#nama').focus()
+                    return false;
+                }else{
+                    $('.msg').addClass('d-none')
+                }
+
                 // alert('masad')/
                 let periksa1 = $('#form1').serializeArray();
                 let periksa2 = $('#form2').serializeArray();
                 calc = 0;
+                nama = ''
                 $.each(periksa1, function(i, val){
-                    calc+= parseInt(val['value'])
+                    if(val['name'] != 'nama'){
+                        calc+= parseInt(val['value'])
+                    }else{
+                        nama = val['value']
+                    }
+                    console.log(name)
                 })
                 if(calc <=4){
                     $('#hasil1').html('<span style="color: green;">Rendah</span>')
@@ -275,6 +321,7 @@
                     data : {
                         'calc1' :calc,
                         'calc2' :calc2,
+                        'nama' : nama,
                         '_token' : "{{ csrf_token() }}"
                     },
                     dataType:'json',

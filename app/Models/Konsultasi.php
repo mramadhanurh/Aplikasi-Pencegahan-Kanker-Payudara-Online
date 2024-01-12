@@ -12,5 +12,6 @@ class Konsultasi extends Model
     protected $fillable = [
         'total_skor_resiko',
         'total_skor_analisa',
+        'nama'
     ];
 }

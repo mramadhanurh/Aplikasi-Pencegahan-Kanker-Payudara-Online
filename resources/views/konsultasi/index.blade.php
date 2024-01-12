@@ -11,6 +11,7 @@
                 <thead>
                     <tr class="text-center">
                         <th>Tanggal</th>
+                        <th>Nama</th>
                         <th>Nilai Resiko</th>
                         <th>Nilai Analisa</th>
                     </tr>
@@ -48,6 +49,7 @@
                          $('tbody').append(
                             `<tr>
                                 <td class="text-center">${item.tanggal}</td>
+                                <td class="text-center">${item.nama}</td>
                                 <td class="text-center">${item.resiko}</td>
                                 <td class="text-center">${item.analisa}</td>
                                 
