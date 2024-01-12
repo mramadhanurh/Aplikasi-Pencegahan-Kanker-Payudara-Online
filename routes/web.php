@@ -22,6 +22,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('cekartikel', [ArtikelController::class, 'cek_artikel']);
+Route::get('readartikel/{id}', [ArtikelController::class, 'readartikel']);
+
 
 Route::get('/konsultasi', [KonsultasiController::class, 'index']);
 Route::post('periksa', [KonsultasiController::class, 'periksa']);

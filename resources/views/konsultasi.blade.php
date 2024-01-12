@@ -74,6 +74,9 @@
                                         <a href = "/konsultasi" class = "nav-link text-white nav-active text-nowrap">Konsultasi</a>
                                     </li>
                                     <li class = "nav-item">
+                                        <a href = "/cekartikel" class = "nav-link text-white text-nowrap">Article</a>
+                                    </li>
+                                    <li class = "nav-item">
                                         <a href="{{ route('login') }}" class = "nav-link text-white text-nowrap">Log In</a>
                                     </li>
                                     <!-- <li class = "nav-item">

@@ -151,7 +151,7 @@
       V 0.1
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2024 <a href="https://shopee.co.id/codingcenter">Aplikasi Pencegahan Kanker Payudara Online</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2024 <a href="/">Aplikasi Pencegahan Kanker Payudara Online</a>.</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->

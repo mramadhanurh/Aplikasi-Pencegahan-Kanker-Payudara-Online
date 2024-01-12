@@ -19,11 +19,18 @@ class ArtikelController extends Controller
         return view('artikel.index', compact('artikel', 'judul'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function cek_artikel()
+    {
+        $artikel = Artikel::all();
+        return view('artikel', compact('artikel'));
+    }
+
+    public function readartikel($id)
+    {
+        $artikel = Artikel::find($id);
+        return view('readartikel', compact('artikel'));
+    }
+
     public function create()
     {
         $judul = [
