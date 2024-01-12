@@ -72,6 +72,10 @@ Route::group(['middleware'=>'auth'], function(){
 	Route::get('edit-pertanyaan/{id}', [PertanyaanController::class, 'edit']);
 	Route::put('update-pertanyaan/{id}', [PertanyaanController::class, 'update']);
 	Route::delete('delete-pertanyaan/{id}', [PertanyaanController::class, 'destroy']);
+
+	// Route hasil
+	Route::get('hasil', [KonsultasiController::class, 'daftarHasil']);
+	Route::get('fetch-konsultasi', [KonsultasiController::class, 'fetchkonsultasi']);
 });
 
 

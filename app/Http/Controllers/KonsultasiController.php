@@ -56,4 +56,38 @@ class KonsultasiController extends Controller
 
     	return json_encode(['status' =>'sukses']);
     }
+    public function daftarHasil(){
+    	 $judul = [
+            'subjudul' => 'Hasil',
+            'submenu' => 'hasil',
+        ];
+        return view('konsultasi.index', compact('judul'));
+
+    }
+
+    public function fetchkonsultasi()
+    {
+        $hasil = Konsultasi::all();
+        $result = [];
+        foreach ($hasil as $item){
+        	$temp['tanggal'] = date('d-m-Y', strtotime($item->created_at));
+        	$resiko= (int)$item->total_skor_resiko;
+        	$str = 'Rendah';
+        	if($resiko > 4 && $resiko < 7){
+        		$str = 'Sedang';
+        	}else if($resiko >= 7){
+        		$str = 'Tinggi';
+        	}
+        	$temp['resiko'] = $str;
+        	$analisa = (int)$item->total_skor_analisa;
+
+        	$temp['analisa'] = $analisa > 0? 'Mencurigakan' : 'Normal';
+        	$result[] = $temp;
+
+        				
+        }
+        return response()->json([
+            'result'=>$result,
+        ]);
+    }
 }
